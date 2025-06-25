@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLM 데이터 분석가 포트폴리오</title>
+    <title>배성우 - 데이터 분석가 포트폴리오</title>
     <style>
         * {
             margin: 0;
@@ -12,8 +12,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
             color: #e0e6ed;
             line-height: 1.6;
             overflow-x: hidden;
@@ -25,71 +25,136 @@
             padding: 0 20px;
         }
 
+        /* Header */
+        header {
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #60a5fa;
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #e0e6ed;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
-            background: radial-gradient(ellipse at center, rgba(46, 125, 50, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.3" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(96,165,250,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             opacity: 0.3;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #4fc3f7, #29b6f6, #03a9f4);
+            background: linear-gradient(135deg, #60a5fa, #34d399, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: glow 2s ease-in-out infinite alternate;
         }
 
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 5px rgba(79, 195, 247, 0.3)); }
-            to { filter: drop-shadow(0 0 20px rgba(79, 195, 247, 0.6)); }
-        }
-
         .hero .subtitle {
-            font-size: 1.5rem;
-            color: #81c784;
+            font-size: 1.3rem;
+            color: #94a3b8;
             margin-bottom: 2rem;
-            font-weight: 300;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.5s forwards;
         }
 
-        .hero .description {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 3rem;
-            color: #b0bec5;
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #60a5fa, #34d399);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+            opacity: 0;
+            animation: fadeIn 1s ease 1s forwards;
         }
 
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.4);
+        }
+
+        /* Sections */
         .section {
-            padding: 80px 0;
+            padding: 100px 0;
             position: relative;
         }
 
         .section h2 {
             font-size: 2.5rem;
-            margin-bottom: 3rem;
             text-align: center;
-            color: #4fc3f7;
+            margin-bottom: 3rem;
+            color: #60a5fa;
             position: relative;
         }
 
@@ -100,66 +165,108 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #4fc3f7, #81c784);
+            height: 4px;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
             border-radius: 2px;
         }
 
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-placeholder {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #60a5fa, #34d399);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(96, 165, 250, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .about-text {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 4rem;
+            gap: 2rem;
         }
 
-        .skill-card {
-            background: rgba(255, 255, 255, 0.05);
+        .skill-category {
+            background: rgba(30, 41, 59, 0.6);
             padding: 2rem;
             border-radius: 15px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #4fc3f7, transparent);
-            transition: left 0.5s ease;
-        }
-
-        .skill-card:hover::before {
-            left: 100%;
-        }
-
-        .skill-card:hover {
+        .skill-category:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(79, 195, 247, 0.2);
-            border-color: rgba(79, 195, 247, 0.3);
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 15px 30px rgba(96, 165, 250, 0.2);
         }
 
-        .skill-card h3 {
-            color: #81c784;
+        .skill-category h3 {
+            color: #34d399;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
 
-        .skill-card p {
-            color: #b0bec5;
-            line-height: 1.7;
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
         }
 
+        .skill-bar {
+            width: 60%;
+            height: 8px;
+            background: rgba(96, 165, 250, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
+            border-radius: 4px;
+            animation: fillBar 2s ease;
+        }
+
+        /* Experience Section */
         .experience-timeline {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem 0;
         }
 
         .experience-timeline::before {
@@ -169,303 +276,479 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, #4fc3f7, #81c784);
+            background: linear-gradient(180deg, #60a5fa, #34d399);
             transform: translateX(-50%);
         }
 
         .timeline-item {
-            position: relative;
             margin-bottom: 3rem;
-            width: 45%;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 55%;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            background: #4fc3f7;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(79, 195, 247, 0.5);
-        }
-
-        .timeline-item:nth-child(odd)::before {
-            right: -31px;
-        }
-
-        .timeline-item:nth-child(even)::before {
-            left: -31px;
+            position: relative;
         }
 
         .timeline-content {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(30, 41, 59, 0.6);
             padding: 2rem;
             border-radius: 15px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 55%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #60a5fa, #34d399);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            text-align: center;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .timeline-content:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        .cert-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: rgba(52, 211, 153, 0.5);
+            box-shadow: 0 15px 30px rgba(52, 211, 153, 0.2);
         }
 
-        .timeline-content h3 {
-            color: #81c784;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .timeline-content p {
-            color: #b0bec5;
-            line-height: 1.6;
-        }
-
-        .contact {
-            background: rgba(0, 0, 0, 0.3);
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
             text-align: center;
         }
 
         .contact-info {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(30, 41, 59, 0.6);
             padding: 1.5rem;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.2);
             transition: all 0.3s ease;
-            min-width: 200px;
+            backdrop-filter: blur(10px);
         }
 
         .contact-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(79, 195, 247, 0.2);
+            border-color: rgba(167, 139, 250, 0.5);
         }
 
-        .contact-item h4 {
-            color: #4fc3f7;
-            margin-bottom: 0.5rem;
+        .contact-item i {
+            font-size: 2rem;
+            color: #a78bfa;
+            margin-bottom: 1rem;
         }
 
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+        /* Footer */
+        footer {
+            background: rgba(15, 15, 35, 0.95);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(96, 165, 250, 0.2);
         }
 
-        .floating-element {
-            position: absolute;
-            background: rgba(79, 195, 247, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .floating-element:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(96, 165, 250, 0.5); }
+            to { text-shadow: 0 0 30px rgba(96, 165, 250, 0.8); }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: 100%; }
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero .subtitle { font-size: 1.2rem; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .timeline-item { width: 100%; left: 0 !important; }
-            .timeline-item::before { left: -31px !important; }
-            .experience-timeline::before { left: 0; }
-            .contact-info { flex-direction: column; align-items: center; }
+            .about-content { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; }
+            .timeline-content { width: 90% !important; margin: 0 !important; }
+            .timeline-item:nth-child(even) .timeline-content { margin: 0 !important; }
         }
     </style>
 </head>
 <body>
-    <div class="floating-elements">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-    </div>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">배성우</div>
+            <ul class="nav-links">
+                <li><a href="#about">소개</a></li>
+                <li><a href="#skills">기술</a></li>
+                <li><a href="#experience">경험</a></li>
+                <li><a href="#certifications">자격증</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-content">
+            <h1>배성우</h1>
+            <p class="subtitle">데이터로 인사이트를 찾는 분석가</p>
+            <a href="#about" class="cta-button">더 알아보기</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
         <div class="container">
-            <div class="hero-content">
-                <h1>LLM 데이터 분석가</h1>
-                <p class="subtitle">AI와 데이터로 비즈니스 가치를 창출합니다</p>
-                <p class="description">
-                    식품생명공학 전공 배경과 다양한 창업 경험을 바탕으로, 
-                    최신 LLM 기술을 활용한 데이터 분석으로 실질적인 비즈니스 솔루션을 제공합니다. 
-                    재테크와 시장 분석에 대한 깊은 관심으로 데이터 기반 투자 전략도 연구하고 있습니다.
-                </p>
+            <h2>소개</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-placeholder">배성우</div>
+                </div>
+                <div class="about-text">
+                    <p>안녕하세요! 식품생명공학을 전공하고 프랜차이즈 사업과 요식업 경험을 바탕으로 데이터 분석 분야로 전환한 배성우입니다.</p>
+                    <p>기존 사업 경험에서 얻은 실무적 관점과 창의적 사고방식을 결합하여, 데이터에서 실질적인 비즈니스 인사이트를 도출하는 것에 열정을 가지고 있습니다.</p>
+                    <p>복잡한 데이터를 명확한 스토리로 변환하고, 데이터 기반 의사결정을 통해 비즈니스 성과를 개선하는 데 기여하고자 합니다.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
         <div class="container">
-            <h2>전문 분야</h2>
+            <h2>핵심 역량</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>🤖 LLM & AI 분석</h3>
-                    <p>ChatGPT, Claude, GPT-4 등 최신 언어모델을 활용한 데이터 분석 및 인사이트 도출. 프롬프트 엔지니어링과 AI 도구 최적화를 통한 업무 효율성 극대화.</p>
+                <div class="skill-category">
+                    <h3>🔍 데이터 분석</h3>
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>SQL</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>R</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Excel</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h3>📊 데이터 사이언스</h3>
-                    <p>Python, R을 활용한 데이터 전처리, 시각화, 통계 분석. 머신러닝 모델 구축과 비즈니스 인텔리전스 대시보드 개발로 데이터 기반 의사결정 지원.</p>
+                <div class="skill-category">
+                    <h3>📊 시각화 도구</h3>
+                    <div class="skill-item">
+                        <span>Tableau</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Power BI</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Matplotlib/Seaborn</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h3>💰 재테크 & 투자 분석</h3>
-                    <p>주식, 부동산, 암호화폐 등 다양한 자산군에 대한 데이터 분석. 시장 트렌드 예측과 포트폴리오 최적화를 통한 투자 전략 수립.</p>
+                <div class="skill-category">
+                    <h3>🤖 머신러닝</h3>
+                    <div class="skill-item">
+                        <span>Scikit-learn</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>통계 분석</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>예측 모델링</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h3>🧬 식품생명공학</h3>
-                    <p>식품과학 전공 지식을 바탕으로 한 생명과학 데이터 분석. 영양성분 분석, 품질관리 시스템 구축, 식품 안전성 평가.</p>
+                <div class="skill-category">
+                    <h3>💼 비즈니스 스킬</h3>
+                    <div class="skill-item">
+                        <span>사업 기획</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>운영 관리</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>고객 분석</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <!-- Experience Section -->
+    <section id="experience" class="section">
         <div class="container">
-            <h2>사업 경험</h2>
+            <h2>경험</h2>
             <div class="experience-timeline">
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>스타트업 창업</h3>
-                        <p>혁신적인 아이디어를 바탕으로 기술 스타트업을 창업하며 사업 전반에 대한 이해도를 높였습니다. 시장 분석부터 제품 개발, 마케팅까지 전 과정을 경험했습니다.</p>
+                        <h3>데이터 분석 역량 개발</h3>
+                        <p class="timeline-date">2025 - 현재</p>
+                        <p>SQLD, ADSP, AICE 자격증 취득을 통한 체계적인 데이터 분석 역량 구축</p>
+                        <ul>
+                            <li>SQL 기반 데이터베이스 관리 및 쿼리 최적화</li>
+                            <li>통계 분석 및 데이터 마이닝 기법 학습</li>
+                            <li>AI/ML 모델 구현 및 활용</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>요식업 운영</h3>
-                        <p>외식업계에서 직접 매장을 운영하며 고객 서비스, 재고 관리, 매출 분석 등 실무 경험을 쌓았습니다. 데이터 기반 운영 최적화를 통해 수익성을 개선했습니다.</p>
+                        <p class="timeline-date">2020 - 2025</p>
+                        <p>직접적인 고객 서비스 및 운영 데이터 분석 경험</p>
+                        <ul>
+                            <li>매출 데이터 분석을 통한 메뉴 최적화</li>
+                            <li>고객 행동 패턴 분석 및 마케팅 전략 수립</li>
+                            <li>재고 관리 및 원가 분석 시스템 구축</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>프로틴 시리얼 제조업</h3>
-                        <p>식품생명공학 전공 지식을 활용하여 건강식품 제조 사업을 운영했습니다. 제품 개발부터 품질관리, 유통까지 전 과정에서 데이터 분석을 적용했습니다.</p>
+                        <h3>프랜차이즈 사업</h3>
+                        <p class="timeline-date">2019 - 2020</p>
+                        <p>사업 기획부터 운영까지 전 과정 경험</p>
+                        <ul>
+                            <li>시장 조사 및 경쟁사 분석</li>
+                            <li>사업계획서 작성 및 투자 유치</li>
+                            <li>운영 시스템 구축 및 성과 분석</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>소셜커머스 & 프랜차이즈</h3>
-                        <p>온라인 커머스 플랫폼 운영과 프랜차이즈 사업을 통해 디지털 마케팅과 비즈니스 모델 확장 경험을 쌓았습니다. 고객 데이터 분석을 통한 매출 증대를 실현했습니다.</p>
+                        <h3>식품생명공학 전공</h3>
+                        <p class="timeline-date">2012 - 2018</p>
+                        <p>과학적 사고와 실험 설계 능력 함양</p>
+                        <ul>
+                            <li>실험 설계 및 데이터 수집/분석</li>
+                            <li>통계적 가설 검증 방법론 학습</li>
+                            <li>연구 보고서 작성 및 프레젠테이션</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section contact">
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
         <div class="container">
-            <h2>함께 성장하겠습니다</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #b0bec5;">
-                데이터와 AI의 힘으로 더 나은 비즈니스 결과를 만들어갑니다
-            </p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>전문 영역</h4>
-                    <p>LLM 기반 데이터 분석<br>비즈니스 인텔리전스</p>
+            <h2>자격증</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🗣️</div>
+                    <h3>TOEIC Speaking</h3>
+                    <p>영어 의사소통 능력 인증(IH)</p>
+                    <p><strong>취득 완료</strong></p>
                 </div>
-                <div class="contact-item">
-                    <h4>관심 분야</h4>
-                    <p>재테크 & 투자 분석<br>시장 트렌드 예측</p>
+                <div class="cert-card">
+                    <div class="cert-icon">🗄️</div>
+                    <h3>SQLD</h3>
+                    <p>SQL 개발자 자격증</p>
+                    <p><strong>취득 예정</strong></p>
                 </div>
-                <div class="contact-item">
-                    <h4>협업 문의</h4>
-                    <p>프로젝트 상담<br>데이터 분석 의뢰</p>
+                <div class="cert-card">
+                    <div class="cert-icon">📊</div>
+                    <h3>ADSP</h3>
+                    <p>데이터분석 준전문가</p>
+                    <p><strong>취득 예정</strong></p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🤖</div>
+                    <h3>AICE</h3>
+                    <p>AI Certified Engineer</p>
+                    <p><strong>취득 예정</strong></p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>연락처</h2>
+            <div class="contact-content">
+                <p>데이터 분석 프로젝트나 협업 기회에 대해 논의하고 싶으시다면 언제든 연락주세요!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="cert-icon">📧</div>
+                        <h3>이메일</h3>
+                        <p>baesisi3648@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="cert-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/baesisi3648</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="cert-icon">💻</div>
+                        <h3>GitHub</h3>
+                        <p>github.com/baesisi3648</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 배성우. 모든 권리 보유.</p>
+        </div>
+    </footer>
 
     <script>
-        // 스크롤 애니메이션
-        window.addEventListener('scroll', () => {
-            const elements = document.querySelectorAll('.skill-card, .timeline-item');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                } else {
-                    element.style.opacity = '0';
-                    element.style.transform = 'translateY(30px)';
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
 
-        // 초기 설정
-        document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.skill-card, .timeline-item');
-            elements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'all 0.6s ease';
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
+        }, observerOptions);
+
+        // Observe sections for fade-in animation
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
         });
 
-        // 마우스 따라다니는 효과
-        document.addEventListener('mousemove', (e) => {
-            const floatingElements = document.querySelectorAll('.floating-element');
-            floatingElements.forEach((element, index) => {
-                const speed = (index + 1) * 0.02;
-                const x = e.clientX * speed;
-                const y = e.clientY * speed;
-                element.style.transform = `translate(${x}px, ${y}px)`;
+        // Dynamic typing effect for hero subtitle
+        const subtitle = document.querySelector('.hero .subtitle');
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                subtitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        setTimeout(typeWriter, 1500);
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+
+        // Skill bars animation
+        const skillBars = document.querySelectorAll('.skill-progress');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 500);
+                }
             });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => {
+            skillObserver.observe(bar);
         });
     </script>
 </body>
