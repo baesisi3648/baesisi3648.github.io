@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>배성우 - 데이터 분석가 & AI 엔지니어</title>
+    <title>배성우 - 데이터 분석가</title>
     <style>
         * {
             margin: 0;
@@ -156,7 +156,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 30px rgba(49, 130, 246, 0.3);
         }
 
         .btn-secondary {
@@ -178,8 +178,8 @@
 
         .floating-cards {
             position: relative;
-            width: 400px;
-            height: 300px;
+            width: 450px;
+            height: 400px;
         }
 
         .floating-card {
@@ -191,23 +191,24 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
             animation: float 6s ease-in-out infinite;
+            width: 180px;
         }
 
         .floating-card:nth-child(1) {
-            top: 0;
-            left: 0;
+            top: 30px;
+            left: 0px;
             animation-delay: 0s;
         }
 
         .floating-card:nth-child(2) {
-            top: 50px;
-            right: 0;
+            top: 100px;
+            right: 20px;
             animation-delay: 2s;
         }
 
         .floating-card:nth-child(3) {
-            bottom: 0;
-            left: 50px;
+            bottom: 50px;
+            left: 90px;
             animation-delay: 4s;
         }
 
@@ -486,6 +487,12 @@
             border-radius: 16px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
         }
 
         .contact-item h3 {
@@ -511,6 +518,53 @@
             color: white;
             text-align: center;
             padding: 2rem 0;
+        }
+
+        /* 네비게이션 활성화 스타일 */
+        .nav-links a.active {
+            color: var(--primary-blue);
+            position: relative;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            border-radius: 1px;
+        }
+
+        /* 애니메이션 스타일 */
+        .skill-card, .project-card, .timeline-item {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        .skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .project-card:nth-child(1) { animation-delay: 0.2s; }
+        .project-card:nth-child(2) { animation-delay: 0.4s; }
+        .project-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* 반응형 디자인 */
@@ -547,13 +601,45 @@
             }
 
             .floating-cards {
-                width: 300px;
-                height: 300px;
+                width: 350px;
+                height: 350px;
             }
 
             .floating-card {
                 padding: 1rem;
-                width: 120px;
+                width: 130px;
+                height: 100px;
+                font-size: 0.8rem;
+            }
+
+            .floating-card h4 {
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .floating-card p {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
             }
         }
     </style>
@@ -579,7 +665,7 @@
             <div class="hero-text">
                 <h1>데이터로 인사이트를<br>찾는 분석가</h1>
                 <p class="hero-subtitle">Data Scientist & AI Engineer</p>
-                <p class="hero-description">식품생명공학을 전공하고 프랜차이즈 사업과 요식업 경험을 바탕으로 데이터 분석 분야로 전환했습니다. 기존 사업 경험에서 얻은 실무적 관점과 창의적 사고방식을 결합하여, 데이터에서 실질적인 비즈니스 인사이트를 도출하는 것에 열정을 가지고 있습니다.</p>
+                <p class="hero-description">식품 업계 스타트업부터 창업에 이르기까지의 실전 경험을 가지고 있고<br>데이터분석을 바탕으로 브랜드 운영과 성장에 직접 기여할 수 있습니다.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn-primary">프로젝트 보기</a>
                     <a href="#contact" class="btn-secondary">연락하기</a>
@@ -712,7 +798,7 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2025 - 현재</div>
                         <h3 class="timeline-title">데이터 분석가 전문 역량 구축</h3>
-                        <p class="timeline-description">SQLD, ADSP, AICE 자격증 취득을 통한 체계적인 데이터 분석 역량 구축 및 최신 AI 기술 습득</p>
+                        <p class="timeline-description">SQLD, ADSP 자격증 취득을 통한 체계적인 데이터 분석 역량 구축 및 최신 AI 기술 습득</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
@@ -757,8 +843,8 @@
                     <a href="mailto:baesisi3648@gmail.com">baesisi3648@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    <h3>💼 LinkedIn</h3>
-                    <a href="https://linkedin.com/in/baesisi3648" target="_blank">linkedin.com/in/baesisi3648</a>
+                    <h3>📋 Notion</h3>
+                    <a href="https://www.notion.so/260576c82b6180b18e63e3f7c569a170" target="_blank">포트폴리오 상세보기</a>
                 </div>
                 <div class="contact-item">
                     <h3>🐙 GitHub</h3>
@@ -832,87 +918,5 @@
             }, 100);
         });
     </script>
-
-    <style>
-        /* 추가 애니메이션 스타일 */
-        .nav-links a.active {
-            color: var(--primary-blue);
-            position: relative;
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--primary-blue);
-            border-radius: 1px;
-        }
-
-        /* 스크롤 시 페이드인 효과 */
-        .skill-card, .project-card, .timeline-item {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .skill-card:nth-child(1) { animation-delay: 0.1s; }
-        .skill-card:nth-child(2) { animation-delay: 0.2s; }
-        .skill-card:nth-child(3) { animation-delay: 0.3s; }
-        .skill-card:nth-child(4) { animation-delay: 0.4s; }
-        .skill-card:nth-child(5) { animation-delay: 0.5s; }
-        .skill-card:nth-child(6) { animation-delay: 0.6s; }
-
-        .project-card:nth-child(1) { animation-delay: 0.2s; }
-        .project-card:nth-child(2) { animation-delay: 0.4s; }
-        .project-card:nth-child(3) { animation-delay: 0.6s; }
-
-        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 호버 시 글로우 효과 */
-        .btn-primary:hover {
-            box-shadow: 0 6px 30px rgba(49, 130, 246, 0.3);
-        }
-
-        .contact-item:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-
-        /* 추가 반응형 스타일 */
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 280px;
-                text-align: center;
-            }
-        }
-    </style>
 </body>
 </html>
