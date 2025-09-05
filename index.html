@@ -102,10 +102,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            text-align: center;
             position: relative;
             z-index: 1;
         }
@@ -135,9 +132,10 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .btn-primary, .btn-secondary {
+        .btn-primary, .btn-secondary, .btn-outline {
             padding: 1rem 2rem;
             border-radius: 12px;
             text-decoration: none;
@@ -146,6 +144,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            display: inline-block;
         }
 
         .btn-primary {
@@ -170,51 +169,17 @@
             border-color: rgba(255,255,255,0.5);
         }
 
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
         }
 
-        .floating-cards {
-            position: relative;
-            width: 450px;
-            height: 400px;
-        }
-
-        .floating-card {
-            position: absolute;
-            background: rgba(255,255,255,0.95);
-            color: var(--text-dark);
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-            animation: float 6s ease-in-out infinite;
-            width: 180px;
-        }
-
-        .floating-card:nth-child(1) {
-            top: 30px;
-            left: 0px;
-            animation-delay: 0s;
-        }
-
-        .floating-card:nth-child(2) {
-            top: 100px;
-            right: 20px;
-            animation-delay: 2s;
-        }
-
-        .floating-card:nth-child(3) {
-            bottom: 50px;
-            left: 90px;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(255,255,255,0.3);
         }
 
         /* 섹션 공통 스타일 */
@@ -569,12 +534,6 @@
 
         /* 반응형 디자인 */
         @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
             .hero-text h1 {
                 font-size: 2.5rem;
             }
@@ -599,27 +558,6 @@
             .nav-links {
                 display: none;
             }
-
-            .floating-cards {
-                width: 350px;
-                height: 350px;
-            }
-
-            .floating-card {
-                padding: 1rem;
-                width: 130px;
-                height: 100px;
-                font-size: 0.8rem;
-            }
-
-            .floating-card h4 {
-                font-size: 0.9rem;
-                margin-bottom: 0.3rem;
-            }
-
-            .floating-card p {
-                font-size: 0.75rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -636,7 +574,7 @@
                 align-items: center;
             }
             
-            .btn-primary, .btn-secondary {
+            .btn-primary, .btn-secondary, .btn-outline {
                 width: 100%;
                 max-width: 280px;
                 text-align: center;
@@ -669,22 +607,7 @@
                 <div class="cta-buttons">
                     <a href="#projects" class="btn-primary">프로젝트 보기</a>
                     <a href="#contact" class="btn-secondary">연락하기</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="floating-card">
-                        <h4>📊 Data Analysis</h4>
-                        <p>복잡한 데이터를 명확한 스토리로</p>
-                    </div>
-                    <div class="floating-card">
-                        <h4>🤖 AI Engineering</h4>
-                        <p>머신러닝으로 비즈니스 혁신</p>
-                    </div>
-                    <div class="floating-card">
-                        <h4>💡 Business Insight</h4>
-                        <p>데이터 기반 의사결정 지원</p>
-                    </div>
+                    <a href="배성우 이력서(1p)_데이터분석.pdf" class="btn-outline" target="_blank">이력서 보기</a>
                 </div>
             </div>
         </div>
@@ -798,7 +721,7 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2025 - 현재</div>
                         <h3 class="timeline-title">데이터 분석가 전문 역량 구축</h3>
-                        <p class="timeline-description">SQLD, ADSP 자격증 취득을 통한 체계적인 데이터 분석 역량 구축 및 최신 AI 기술 습득</p>
+                        <p class="timeline-description">SQLD, ADSP, AICE 자격증 취득을 통한 체계적인 데이터 분석 역량 구축 및 최신 AI 기술 습득</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
