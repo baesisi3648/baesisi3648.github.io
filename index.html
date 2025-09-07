@@ -439,103 +439,6 @@
             transform: translateY(-2px);
         }
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
-        }
-
-        .timeline-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            margin-left: 80px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 20px 20px 0 0;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: -66px;
-            top: 30px;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-            border: 3px solid #0a0a0a;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-        }
-
-        .timeline-period {
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-
-        .timeline-role {
-            color: #ffffff;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .timeline-company {
-            color: #b0b0b0;
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .timeline-details {
-            list-style: none;
-            color: #d0d0d0;
-        }
-
-        .timeline-details li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-            line-height: 1.5;
-        }
-
-        .timeline-details li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-size: 0.8rem;
-        }
-
         /* Learning & Growth Section */
         .learning-header {
             text-align: center;
@@ -669,6 +572,103 @@
             color: #b0b0b0;
             line-height: 1.5;
             font-size: 0.95rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            margin-left: 80px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -66px;
+            top: 30px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid #0a0a0a;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .timeline-period {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-role {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-company {
+            color: #b0b0b0;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .timeline-details {
+            list-style: none;
+            color: #d0d0d0;
+        }
+
+        .timeline-details li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .timeline-details li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 0.8rem;
         }
 
         /* Contact */
@@ -817,6 +817,7 @@
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#learning">Learning</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -903,6 +904,7 @@
                         <li>GitHub 프로젝트 관리</li>
                         <li>Git workflow</li>
                     </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1002,93 +1004,6 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-period">2021 - 2025.5</div>
-                    <div class="timeline-role">지점 운영 총괄 | 사장</div>
-                    <div class="timeline-company">승도리네 곱도리탕 광교상현역점 | 대한민국</div>
-                    <ul class="timeline-details">
-                        <li>매장 운영 총괄</li>
-                        <li>회계 및 세무 업무 처리</li>
-                        <li>고객 서비스 및 매출 증대 전략(3년 연속 매출 증가, 지역 맛집 1위 달성)</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-period">2022 - 2023</div>
-                    <div class="timeline-role">브랜드 런칭 및 제품 마케팅 | 팀장</div>
-                    <div class="timeline-company">(주)스낵리고 | 대한민국</div>
-                    <ul class="timeline-details">
-                        <li>식물성 건강 스낵 브랜드 '파이토플레이크' 런칭</li>
-                        <li>국내 3사 백화점 식품관 및 급식 경로 B2B 입점</li>
-                        <li>해외 5개국 수출 (미국, 싱가포르, 홍콩, 말레이시아, 필리핀)</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-period">2020 - 2021</div>
-                    <div class="timeline-role">가맹 사업 운영 | 상무, 경영지원실장</div>
-                    <div class="timeline-company">(주)케이푸드스토리 | 대한민국</div>
-                    <ul class="timeline-details">
-                        <li>'승도리네 곱도리탕' 프랜차이즈화 전환 총괄(회사 사규 및 정보공개서 제작)</li>
-                        <li>매장 효율과 업무 총괄(시스템 설계 및 매뉴얼 제작)</li>
-                        <li>직영 전 지점 매출 및 인력관리</li>
-                        <li>식자재 대량 매입 및 원팩화 업무</li>
-                        <li>1년 동안 25개 지점 신규 매출 달성</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-period">2019 - 2020</div>
-                    <div class="timeline-role">경희대학교 식품생명공학과 행정업무 | 사원</div>
-                    <div class="timeline-company">(주)유니에스 | 대한민국</div>
-                    <ul class="timeline-details">
-                        <li>학과 예산 배정 및 관리</li>
-                        <li>학부 행정 업무</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline" style="margin-top: 60px;">
-                <div class="timeline-item">
-                    <div class="timeline-period">2025 - 현재</div>
-                    <div class="timeline-content">
-                        <h3>데이터 분석 역량 구축</h3>
-                        <p>SQLD, ADSP, PCCE 자격증 취득을 통한 체계적인 데이터 분석 역량 구축</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-period">2020 - 2025</div>
-                    <div class="timeline-content">
-                        <h3>요식업 운영 경험</h3>
-                        <p>직접적인 고객 서비스 및 운영 데이터 분석 경험</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-period">2019 - 2020</div>
-                    <div class="timeline-content">
-                        <h3>프랜차이즈 사업</h3>
-                        <p>사업 기획부터 운영까지 전 과정 경험</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-period">2012 - 2018</div>
-                    <div class="timeline-content">
-                        <h3>식품생명공학 전공</h3>
-                        <p>과학적 사고와 실험 설계 능력 함양</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Learning & Growth Section -->
     <section id="learning" class="section">
         <div class="container">
@@ -1142,6 +1057,59 @@
                 <div class="learning-card">
                     <h4 class="learning-card-title">대용량 문서 토큰 초과 오류 해소</h4>
                     <p class="learning-card-description">임베딩/요약 단계에서 max_tokens_per_request 오류를 재현하고, 청크 길이·겹침 재설계와 요약 압축·메타데이터 프리필터로 요청 크기를 제어해 파이프라인을 안정화했습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-period">2021 - 2025.5</div>
+                    <div class="timeline-role">지점 운영 총괄 | 사장</div>
+                    <div class="timeline-company">승도리네 곱도리탕 광교상현역점 | 대한민국</div>
+                    <ul class="timeline-details">
+                        <li>매장 운영 총괄</li>
+                        <li>회계 및 세무 업무 처리</li>
+                        <li>고객 서비스 및 매출 증대 전략(3년 연속 매출 증가, 지역 맛집 1위 달성)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-period">2022 - 2023</div>
+                    <div class="timeline-role">브랜드 런칭 및 제품 마케팅 | 팀장</div>
+                    <div class="timeline-company">(주)스낵리고 | 대한민국</div>
+                    <ul class="timeline-details">
+                        <li>식물성 건강 스낵 브랜드 '파이토플레이크' 런칭</li>
+                        <li>국내 3사 백화점 식품관 및 급식 경로 B2B 입점</li>
+                        <li>해외 5개국 수출 (미국, 싱가포르, 홍콩, 말레이시아, 필리핀)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-period">2020 - 2021</div>
+                    <div class="timeline-role">가맹 사업 운영 | 상무, 경영지원실장</div>
+                    <div class="timeline-company">(주)케이푸드스토리 | 대한민국</div>
+                    <ul class="timeline-details">
+                        <li>'승도리네 곱도리탕' 프랜차이즈화 전환 총괄(회사 사규 및 정보공개서 제작)</li>
+                        <li>매장 효율과 업무 총괄(시스템 설계 및 매뉴얼 제작)</li>
+                        <li>직영 전 지점 매출 및 인력관리</li>
+                        <li>식자재 대량 매입 및 원팩화 업무</li>
+                        <li>1년 동안 25개 지점 신규 매출 달성</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-period">2019 - 2020</div>
+                    <div class="timeline-role">경희대학교 식품생명공학과 행정업무 | 사원</div>
+                    <div class="timeline-company">(주)유니에스 | 대한민국</div>
+                    <ul class="timeline-details">
+                        <li>학과 예산 배정 및 관리</li>
+                        <li>학부 행정 업무</li>
+                    </ul>
                 </div>
             </div>
         </div>
