@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>배성우 - 데이터 분석가</title>
+    <title>📚 배성우 - 데이터 분석가</title>
     <style>
         * {
             margin: 0;
@@ -359,11 +359,12 @@
         }
 
         .tag.python { background: rgba(52, 168, 83, 0.2); color: #34a853; }
+        .tag.numpy { background: rgba(0, 119, 190, 0.2); color: #0077be; }
+        .tag.pandas { background: rgba(76, 175, 80, 0.2); color: #4caf50; }
         .tag.kofc-api { background: rgba(66, 133, 244, 0.2); color: #4285f4; }
         .tag.tmdb-api { background: rgba(255, 87, 34, 0.2); color: #ff5722; }
         .tag.web-scraping { background: rgba(156, 39, 176, 0.2); color: #9c27b0; }
         .tag.beautifulsoup { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
-        .tag.pandas { background: rgba(76, 175, 80, 0.2); color: #4caf50; }
         .tag.data-analysis { background: rgba(233, 30, 99, 0.2); color: #e91e63; }
         .tag.sql { background: rgba(63, 81, 181, 0.2); color: #3f51b5; }
         .tag.postgresql { background: rgba(0, 150, 136, 0.2); color: #009688; }
@@ -535,6 +536,141 @@
             font-size: 0.8rem;
         }
 
+        /* Learning & Growth Section */
+        .learning-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .learning-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .learning-subtitle {
+            color: #a0a7ff;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .github-stats {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .github-title {
+            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .github-description {
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e91e63;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-plus {
+            color: #e91e63;
+        }
+
+        .stat-label {
+            color: #a0a7ff;
+            font-size: 0.9rem;
+        }
+
+        .github-note {
+            color: #667eea;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .skills-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .skill-btn {
+            padding: 10px 20px;
+            border: 1px solid rgba(233, 30, 99, 0.5);
+            border-radius: 20px;
+            background: rgba(233, 30, 99, 0.1);
+            color: #e91e63;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-btn:hover {
+            background: rgba(233, 30, 99, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .learning-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .learning-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        .learning-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .learning-card-description {
+            color: #b0b0b0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
         /* Contact */
         .contact-grid {
             display: grid;
@@ -625,6 +761,10 @@
             .timeline-item::after {
                 left: -46px;
             }
+
+            .stats-grid {
+                gap: 30px;
+            }
             
             .section {
                 padding: 60px 0;
@@ -659,6 +799,11 @@
 
             .timeline-item::after {
                 left: -31px;
+            }
+
+            .stats-grid {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
@@ -710,7 +855,7 @@
                         <li>EDA(데이터 파이프라인 구축)</li>
                     </ul>
                 </div>
-                
+                 
                 <div class="skill-card">
                     <div class="skill-icon">📊</div>
                     <h3>머신러닝 & 모델링</h3>
@@ -721,7 +866,6 @@
                         <li>모델 평가 및 개선</li>
                     </ul>
                 </div>
-                
                 <div class="skill-card">
                     <div class="skill-icon">💻</div>
                     <h3>LLM & GPT 활용</h3>
@@ -732,18 +876,6 @@
                         <li>LLM Agent 설계</li>
                     </ul>
                 </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🔧</div>
-                    <h3>웹 크롤링 & 데이터 수집</h3>
-                    <ul class="skill-list">
-                        <li>웹 페이지 데이터 추출</li>
-                        <li>????</li>
-                        <li>????</li>
-                        <li>????</li>
-                    </ul>
-                </div>
-                
                 <div class="skill-card">
                     <div class="skill-icon">💾</div>
                     <h3>데이터베이스 & 시각화</h3>
@@ -754,7 +886,6 @@
                         <li>Tableau 학습</li>
                     </ul>
                 </div>
-                
                 <div class="skill-card">
                     <div class="skill-icon">📈</div>
                     <h3>비즈니스 분석 & 전략</h3>
@@ -765,7 +896,6 @@
                         <li>프로젝트 내과제 건별 그레이드</li>
                     </ul>
                 </div>
-                
                 <div class="skill-card">
                     <div class="skill-icon">🛠️</div>
                     <h3>협업툴 & 프로젝트</h3>
@@ -775,7 +905,6 @@
                         <li>????</li>
                         <li>????</li>
                     </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -797,11 +926,27 @@
                     <p class="project-description">olist 이커머스 고객 행동 및 비즈니스 인사이트 분석</p>
                     <div class="project-tags">
                         <span class="tag python">Python</span>
-                        <span class="tag Numpy">Numpy</span>
-                        <span class="tag Pandas">Pandas</span>
+                        <span class="tag numpy">Numpy</span>
+                        <span class="tag pandas">Pandas</span>
                         <span class="tag data-analysis">Data Analysis</span>
                     </div>
-                    <p class="project-description">KOFC API와 TMDB API를 통한 영화 데이터를 수집하고, 영화 장르별 흥행 데이터를 분석했습니다. 웹스크래핑을 통한 추가 데이터 수집과 영화 흥행 프로세스를 분석한 인사이트를 도출했습니다.</p>
+                    <p class="project-description">브라질 최대 이커머스 플랫폼인 Olist의 고객 주문 데이터를 분석하여 고객 행동 패턴과 비즈니스 성과 지표를 도출했습니다. 지역별 매출 분석, 배송 시간 최적화, 고객 만족도 향상 방안을 제시했습니다.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link github-link">GitHub</a>
+                        <a href="#" class="project-link report-link">Report</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">SQL 데이터베이스 분석 프로젝트</h3>
+                    <p class="project-description">음악 데이터베이스를 활용한 다양한 SQL 분석</p>
+                    <div class="project-tags">
+                        <span class="tag sql">SQL</span>
+                        <span class="tag postgresql">PostgreSQL</span>
+                        <span class="tag data-analysis">Data Analysis</span>
+                        <span class="tag database-design">Database Design</span>
+                    </div>
+                    <p class="project-description">음악 스토어의 데이터베이스를 대상으로 매출 분석 및 국가별 고객 매출과 장르별 판매 현황을 분석했습니다. 고객 세분화를 통한 타겟 마케팅 전략을 도출했습니다.</p>
                     <div class="project-links">
                         <a href="#" class="project-link github-link">GitHub</a>
                         <a href="#" class="project-link report-link">Report</a>
@@ -841,15 +986,15 @@
                 </div>
 
                 <div class="project-card">
-                    <h3 class="project-title">와인 품질 예측 머신러닝</h3>
-                    <p class="project-description">화학적 속성을 이용한 와인 품질 등급 예측</p>
+                    <h3 class="project-title">보험 약관 분석 LLM 에이전트</h3>
+                    <p class="project-description">RAG 기반 개인 맞춤형 보험 상품 평가 시스템</p>
                     <div class="project-tags">
                         <span class="tag python">Python</span>
                         <span class="tag scikit-learn">Scikit-learn</span>
                         <span class="tag feature-selection">Feature Selection</span>
                         <span class="tag model-evaluation">Model Evaluation</span>
                     </div>
-                    <p class="project-description">적포도주의 화학적 성분 데이터를 활용하여 포도주의 품질을 등급별로 분류했습니다. 다양한 머신러닝 알고리즘을 비교하고 최적의 모델을 선택하여 정확도를 향상시켰습니다.</p>
+                    <p class="project-description">복잡한 보험 약관을 자동으로 분석하고 개인의 상황에 맞는 최적의 보험 상품을 추천하는 AI 에이전트를 개발했습니다. RAG(Retrieval-Augmented Generation) 기술을 활용하여 정확하고 신뢰성 있는 보험 상담 서비스를 구현했습니다.</p>
                     <div class="project-links">
                         <a href="#" class="project-link github-link">GitHub</a>
                         <a href="#" class="project-link analysis-link">Analysis</a>
@@ -946,6 +1091,64 @@
         </div>
     </section>
 
+    <!-- Learning & Growth Section -->
+    <section id="learning" class="section">
+        <div class="container">
+            <div class="learning-header">
+                <h3 class="learning-title">Learning & Growth</h3>
+                <p class="learning-subtitle">지속적인 학습과 기술 향상을 통해 전문성을 강화하고 있습니다</p>
+            </div>
+
+            <div class="github-stats">
+                <h4 class="github-title">GitHub 활동</h4>
+                <p class="github-description">꾸준한 코딩과 프로젝트 개발을 통해 성장</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">150<span class="stat-plus">+</span></span>
+                        <span class="stat-label">코딩 시간</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">진행 프로젝트</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50<span class="stat-plus">+</span></span>
+                        <span class="stat-label">커밋 수</span>
+                    </div>
+                </div>
+                
+                <p class="github-note">GitHub에서 체 활동을 확인하세요!</p>
+            </div>
+
+            <div class="skills-buttons">
+                <span class="skill-btn">LLM Fine-tuning</span>
+                <span class="skill-btn">MLOps</span>
+                <span class="skill-btn">Real-time Analytics</span>
+                <span class="skill-btn">AutoML</span>
+                <span class="skill-btn">Data Pipeline</span>
+                <span class="skill-btn">Cloud Computing</span>
+            </div>
+
+            <div class="learning-grid">
+                <div class="learning-card">
+                    <h4 class="learning-card-title">AI 데이터 수집 프레임워크</h4>
+                    <p class="learning-card-description">KOFC API와 크롤링 기술을 조합한 영화 데이터 수집 및 분석을 통해 인사이트를 발견했습니다.</p>
+                </div>
+                
+                <div class="learning-card">
+                    <h4 class="learning-card-title">고객 데이터 분석 최적화</h4>
+                    <p class="learning-card-description">이커머스 고객 행동 패턴을 분석하여 우수한 고객 경험을 위한 데이터 기반 솔루션을 개발했습니다.</p>
+                </div>
+                
+                <div class="learning-card">
+                    <h4 class="learning-card-title">데이터팀 멀티 플랫폼 역량</h4>
+                    <p class="learning-card-description">다양한 소스 데이터를 통합하여 분산 환경에서 도메인별 분석 모델을 구축하고 최적화했습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -975,20 +1178,4 @@
         </div>
     </section>
 </body>
-</html>="#" class="project-link report-link">Report</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">SQL 데이터베이스 분석 프로젝트</h3>
-                    <p class="project-description">음악 데이터베이스를 활용한 다양한 SQL 분석</p>
-                    <div class="project-tags">
-                        <span class="tag sql">SQL</span>
-                        <span class="tag postgresql">PostgreSQL</span>
-                        <span class="tag data-analysis">Data Analysis</span>
-                        <span class="tag database-design">Database Design</span>
-                    </div>
-                    <p class="project-description">음악 스토어의 데이터베이스를 대상으로 매출 분석 및 국가별 고객 매출과 장르별 판매 현황을 분석했습니다. 고객 세분화를 통한 타겟 마케팅 전략을 도출했습니다.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link github-link">GitHub</a>
-                        <a href
+</html>
